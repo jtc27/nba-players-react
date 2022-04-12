@@ -1,12 +1,17 @@
-import {GiBasketballBasket} from "react-icons/gi"
+import logo from '../../images/nba.png'
 import {Link} from 'react-router-dom'
 
 function Navbar({title}) {
   return (
-    <nav className='navbar mb-12 shadow-lg bg-purple-700 text-warning'>
+    <nav className='navbar mb-12 shadow-lg bg-white-700 text-black'>
       <div className="container mx-auto">
         <div className="flex-none px-2 mx-2">
-          <GiBasketballBasket className='inline pr-2 text-5xl'/>
+        <Link to='/' className='text-lg font-bold align-middle'>
+          <img src={logo} alt={"logo"} height={100} width={130}></img>
+        </Link>
+        </div>
+
+        <div>
           <Link to='/' className='text-lg font-bold align-middle'>
             {title}
           </Link>
