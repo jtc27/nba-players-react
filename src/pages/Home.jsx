@@ -1,8 +1,10 @@
-import React from 'react'
+import PlayerResults from "../components/players/PlayerResults"
 
 function Home() {
   return (
-    <div>Home</div>
+    <div>
+      <PlayerResults/>
+    </div>
   )
 }
 
