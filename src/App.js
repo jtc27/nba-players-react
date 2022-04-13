@@ -12,7 +12,7 @@ function App() {
     <>
     <NbaProvider>
     <Router>
-    <div className='flex flex-col justify-between h-screen bg-white text-white'>
+    <div className='flex flex-col justify-between h-screen bg-white text-black'>
     <Navbar/>
 
     <main className='flex flex-col mx-auto px-3 pb-12 bg-white-600'>
