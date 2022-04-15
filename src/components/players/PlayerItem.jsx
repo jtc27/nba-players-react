@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom' 
-import profile from '../../images/missing-pic.png'
+import defaultprofile from '../../images/missing-pic.png'
 
 function PlayerItem({player: {
   //destructured
@@ -25,7 +25,7 @@ function PlayerItem({player: {
               to={`/player/${id}`}
               >
                 <img src={`https://nba-players.herokuapp.com/players/${last_name}/${first_name}`} 
-                onError={(event) => event.target.src = profile} //default profile pic
+                onError={(event) => event.target.src = defaultprofile} //default profile pic
                 alt='Profile' />
                 {/*profile pics from https://github.com/iNaesu/nba-headshot-api */}
               </Link>

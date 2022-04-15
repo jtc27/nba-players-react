@@ -10,7 +10,7 @@ const NbaApiUrl = 'https://www.balldontlie.io/api/v1/players'
 export const NbaProvider = ({children}) => {
   const initialState = {
     players: [],
-
+    player: {},
   }
 
   const [state, dispatch] = useReducer(nbaReducer, initialState)
@@ -27,18 +27,15 @@ export const NbaProvider = ({children}) => {
   
       dispatch({
         type: 'GET_PLAYERS',
-        payload: data 
+        payload: data.data
       })
     }
   }
 
   const searchPlayers = async(text) => {
-    const params = new URLSearchParams({
-      q: text
-    })
-
+ 
     // ${NbaApiUrl}?search=${params}
-    const response = await fetch(`https://www.balldontlie.io/api/v1/players?search=davis`) // Make a request
+    const response = await fetch(`https://www.balldontlie.io/api/v1/players?search=${text}`) // Make a request
   
     if(response.status ===404) { 
       window.location='/notfound'
@@ -53,13 +50,31 @@ export const NbaProvider = ({children}) => {
     }
   }
 
+  const getPlayerProfile = async(id) => {
+    const response = await fetch(`https://www.balldontlie.io/api/v1/players/${id}`) // Make a request
+  
+    if(response.status ===404) { 
+      window.location='/notfound'
+    } else {
+  
+      const data = await response.json()
+  
+      dispatch({
+        type: 'GET_PLAYER_PROFILE',
+        payload: data
+      })
+    }
+  }
+
   const clearPlayers = async(text) => {
     
   }
 
   return <NbaContext.Provider value={{
     players: state.players,
+    player: state.player,
     getPlayers,
+    getPlayerProfile,
     searchPlayers
   }}>
   {children}
