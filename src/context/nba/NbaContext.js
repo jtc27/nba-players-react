@@ -11,6 +11,7 @@ export const NbaProvider = ({children}) => {
   const initialState = {
     players: [],
     player: {},
+    player_team: {}
   }
 
   const [state, dispatch] = useReducer(nbaReducer, initialState)
@@ -66,6 +67,22 @@ export const NbaProvider = ({children}) => {
     }
   }
 
+  const getPlayerProfileTeam = async(id) => {
+    const response = await fetch(`https://www.balldontlie.io/api/v1/players/${id}`) // Make a request
+  
+    if(response.status ===404) { 
+      window.location='/notfound'
+    } else {
+  
+      const data = await response.json()
+  
+      dispatch({
+        type: 'GET_PLAYER_PROFILE_TEAM',
+        payload: data.team
+      })
+    }
+  }
+
   const clearPlayers = async(text) => {
     
   }
@@ -73,8 +90,10 @@ export const NbaProvider = ({children}) => {
   return <NbaContext.Provider value={{
     players: state.players,
     player: state.player,
+    player_team: state.player_team,
     getPlayers,
     getPlayerProfile,
+    getPlayerProfileTeam,
     searchPlayers
   }}>
   {children}

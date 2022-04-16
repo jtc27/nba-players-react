@@ -13,6 +13,12 @@ const nbaReducer = (state, action) => {
       player: action.payload,
     }
 
+    case 'GET_PLAYER_PROFILE_TEAM': //single user data
+    return {
+      ...state, //Returns current state above
+      player_team: action.payload,
+    }
+
     case 'SEARCH_PLAYERS': //single user data
     return {
       ...state, //Returns current state above
