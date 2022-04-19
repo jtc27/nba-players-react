@@ -7,13 +7,21 @@ import {useParams, Link} from 'react-router-dom'
 
 function PlayerProfile() {
 
-  const {getPlayerProfile, getPlayerProfileTeam, player, player_team} = useContext(NbaContext)
+  const {
+    getPlayerProfile, 
+    getPlayerProfileTeam, 
+    getPlayerProfileStats,
+    player, 
+    player_team,
+    player_stats
+  } = useContext(NbaContext)
 
   const params = useParams()
 
   useEffect(()=> {
     getPlayerProfile(params.id)
     getPlayerProfileTeam(params.id)
+    getPlayerProfileStats(params.id)
   },[])
 
   const {
@@ -24,13 +32,27 @@ function PlayerProfile() {
     height_inches,
     position,
     weight_pounds,
- 
    } = player
 
    const {
     full_name
- 
    } = player_team
+
+   const {
+    min,
+    fgm,
+    fga,
+    fg_pct,
+    fg3m,
+    fg3a,
+    fg3_pct,
+    pts,
+    ast,
+    stl,
+    blk,
+    
+   } = player_stats
+
 
   return (
     <>
@@ -107,6 +129,107 @@ function PlayerProfile() {
         </div>
 
     </div>
+
+    {/* PLAYER STATS */}
+    <div className='w-full mx-auto lg:w-10/12'>
+
+      <div className='w-full rounded-lg shadow-md bg-base-100 stats'>
+                <div className='stat'>
+                  <div className='stat-title text-md'>FGM</div>
+                  <div className='text-lg stat-value'>
+                  {fgm}
+                    </div>
+                </div>
+
+                <div className='stat'>
+                  <div className='stat-title text-md'>FGA</div>
+                  <div className='text-lg stat-value'>
+                  {fga} 
+                  </div>
+                </div> 
+
+                <div className='stat'>
+                  <div className='stat-title text-md'>FG%</div>
+                  <div className='text-lg stat-value'>
+                  {fg_pct} 
+                  </div>
+                </div> 
+
+                <div className='stat'>
+                  <div className='stat-title text-md'>3PM</div>
+                  <div className='text-lg stat-value'>
+                  {fg3m} 
+                  </div>
+                </div> 
+
+                <div className='stat'>
+                  <div className='stat-title text-md'>3PA</div>
+                  <div className='text-lg stat-value'>
+                  {fg3a} 
+                  </div>
+                </div> 
+
+                <div className='stat'>
+                  <div className='stat-title text-md'>3P%</div>
+                  <div className='text-lg stat-value'>
+                  {fg3_pct} 
+                  </div>
+                </div> 
+
+            </div>
+
+            <div className='w-full rounded-lg shadow-md bg-base-100 stats'>
+              {/* DIVISOR*/}</div>
+
+            <div className='w-full rounded-lg shadow-md bg-base-100 stats'>
+                <div className='stat'>
+                  <div className='stat-title text-md'>FGM</div>
+                  <div className='text-lg stat-value'>
+                  {fgm}
+                    </div>
+                </div>
+
+                <div className='stat'>
+                  <div className='stat-title text-md'>FGA</div>
+                  <div className='text-lg stat-value'>
+                  {fga} 
+                  </div>
+                </div> 
+
+                <div className='stat'>
+                  <div className='stat-title text-md'>FG%</div>
+                  <div className='text-lg stat-value'>
+                  {fg_pct} 
+                  </div>
+                </div> 
+
+                <div className='stat'>
+                  <div className='stat-title text-md'>3PM</div>
+                  <div className='text-lg stat-value'>
+                  {fg3m} 
+                  </div>
+                </div> 
+
+                <div className='stat'>
+                  <div className='stat-title text-md'>3PA</div>
+                  <div className='text-lg stat-value'>
+                  {fg3a} 
+                  </div>
+                </div> 
+
+                <div className='stat'>
+                  <div className='stat-title text-md'>3P%</div>
+                  <div className='text-lg stat-value'>
+                  {fg3_pct} 
+                  </div>
+                </div> 
+
+            </div>
+
+
+    </div>
+
+    
     </>
   )
 }

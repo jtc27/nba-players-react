@@ -11,7 +11,8 @@ export const NbaProvider = ({children}) => {
   const initialState = {
     players: [],
     player: {},
-    player_team: {}
+    player_team: {},
+    player_stats: {}
   }
 
   const [state, dispatch] = useReducer(nbaReducer, initialState)
@@ -83,6 +84,22 @@ export const NbaProvider = ({children}) => {
     }
   }
 
+  const getPlayerProfileStats = async(id) => {
+    const response = await fetch(`https://www.balldontlie.io/api/v1/season_averages?player_ids[]=${id}`) 
+  
+    if(response.status ===404) { 
+      window.location='/notfound'
+    } else {
+  
+      const data = await response.json()
+  
+      dispatch({
+        type: 'GET_PLAYER_PROFILE_STATS',
+        payload: data.data[0]   //The first element of the array has stats
+      })
+    }
+  }
+
   const clearPlayers = async(text) => {
     
   }
@@ -91,10 +108,12 @@ export const NbaProvider = ({children}) => {
     players: state.players,
     player: state.player,
     player_team: state.player_team,
+    player_stats: state.player_stats,
     getPlayers,
     getPlayerProfile,
     getPlayerProfileTeam,
-    searchPlayers
+    getPlayerProfileStats,
+    searchPlayers,
   }}>
   {children}
   </NbaContext.Provider>

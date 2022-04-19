@@ -1,9 +1,9 @@
 const nbaReducer = (state, action) => {
   switch (action.type) {
 
-    case 'GET_PLAYERS': //
+    case 'GET_PLAYERS': // 
     return {
-      ...state, //Returns current state above
+      ...state,
       players: action.payload,
     }
 
@@ -13,10 +13,16 @@ const nbaReducer = (state, action) => {
       player: action.payload,
     }
 
-    case 'GET_PLAYER_PROFILE_TEAM': //single user data
+    case 'GET_PLAYER_PROFILE_TEAM': 
     return {
       ...state, //Returns current state above
       player_team: action.payload,
+    }
+
+    case 'GET_PLAYER_PROFILE_STATS': 
+    return {
+      ...state, //Returns current state above
+      player_stats: action.payload,
     }
 
     case 'SEARCH_PLAYERS': //single user data
