@@ -49,7 +49,7 @@ function PlayerProfile() {
                 onError={(event) => event.target.src = defaultpic} //default profile pic
                 alt='Profile' />
                 {/*profile pics from https://github.com/iNaesu/nba-headshot-api */}
-              </figure>
+              </figure> 
 
             </div>
           </div>
