@@ -16,7 +16,7 @@ function PlayerProfile() {
     getPlayerProfileStats,
     player, 
     player_team,
-    player_stats
+    player_stats,
   } = useContext(NbaContext)
 
   const params = useParams()
@@ -25,7 +25,6 @@ function PlayerProfile() {
     getPlayerProfile(params.id)
     getPlayerProfileTeam(params.id)
     getPlayerProfileStats(params.id)
-
   },[])
 
   const {
@@ -66,8 +65,28 @@ function PlayerProfile() {
 
    } = player_stats
 
- 
+  const per = ((
+    (fgm * 85.91) + 
+    (stl * 53.89) +
+    (fg3m * 51.757) +
+    (blk * 39.19) +
+    (oreb * 39.19) +
+    (ast * 34.677) +
+    (dreb * 14.707) -
+    (pf *17.174) -
+    ((fta-ftm) * 20.091) -
+    ((fga-fgm) * 39.19) -
+    (turnover * 53.897)
+    ) * (1 / 37)).toFixed(2)
+    //https://www.sportsbettingdime.com/guides/how-to/calculate-per/
 
+    function timeToDecimal(t) {
+      var arr = t.split(':');
+      var dec = parseInt((arr[1]/6)*10, 10);
+  
+    return parseFloat(parseInt(arr[0], 10) + '.' + (dec<10?'0':'') + dec);
+  }   
+ 
   return (
     <>
     <div className='w-full mx-auto lg:w-8/12'>
@@ -138,7 +157,9 @@ function PlayerProfile() {
             <> 
             <div className='mx-1 badge badge-lg badge-info'>{season} season</div>
             <div className='mx-1 badge badge-lg badge-warning'>{games_played} games played</div>
-            <div className='mx-1 badge badge-lg badge-success'>{min} minutes played per game </div>
+            <div className='mx-1 badge badge-lg badge-success'>{min} minutes per game </div>
+            <div className='mx-1 badge badge-lg badge-secondary'>{per} PER </div>
+              
             </>
           }
           

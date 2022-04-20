@@ -12,7 +12,8 @@ export const NbaProvider = ({children}) => {
     players: [],
     player: {},
     player_team: {},
-    player_stats: {}
+    player_stats: {},
+    player_min: {}
   }
 
   const [state, dispatch] = useReducer(nbaReducer, initialState)
@@ -104,7 +105,6 @@ export const NbaProvider = ({children}) => {
           payload: data.data[0]   //The first element of the array has stats
         })
       }
-  
     }
   }
 
