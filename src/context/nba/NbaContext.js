@@ -92,11 +92,19 @@ export const NbaProvider = ({children}) => {
     } else {
   
       const data = await response.json()
+
+      if (data.data[0] === undefined) {
+        dispatch({
+          type: 'GET_PLAYER_PROFILE_STATS',
+          payload: 'N/A'  //Some players have empty stats
+        })
+      } else {
+        dispatch({
+          type: 'GET_PLAYER_PROFILE_STATS',
+          payload: data.data[0]   //The first element of the array has stats
+        })
+      }
   
-      dispatch({
-        type: 'GET_PLAYER_PROFILE_STATS',
-        payload: data.data[0]   //The first element of the array has stats
-      })
     }
   }
 
