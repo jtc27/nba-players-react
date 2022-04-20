@@ -77,15 +77,9 @@ function PlayerProfile() {
     ((fta-ftm) * 20.091) -
     ((fga-fgm) * 39.19) -
     (turnover * 53.897)
-    ) * (1 / 37)).toFixed(2)
+    ) * (1 / parseFloat(min))).toFixed(2)
     //https://www.sportsbettingdime.com/guides/how-to/calculate-per/
 
-    function timeToDecimal(t) {
-      var arr = t.split(':');
-      var dec = parseInt((arr[1]/6)*10, 10);
-  
-    return parseFloat(parseInt(arr[0], 10) + '.' + (dec<10?'0':'') + dec);
-  }   
  
   return (
     <>
