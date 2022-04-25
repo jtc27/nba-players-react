@@ -5,7 +5,7 @@ function Home() {
   return (
     <div>
       <PlayerSearchBar/>
-      <PlayerResults/>
+      <PlayerResults/> 
     </div>
   )
 }

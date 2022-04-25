@@ -77,7 +77,7 @@ function PlayerProfile() {
     ((fta-ftm) * 20.091) -
     ((fga-fgm) * 39.19) -
     (turnover * 53.897)
-    ) * (1 / parseFloat(min))).toFixed(2)
+    ) * (1 / parseInt(min))).toFixed(2)
     //https://www.sportsbettingdime.com/guides/how-to/calculate-per/
 
  
