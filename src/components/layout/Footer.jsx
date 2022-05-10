@@ -8,7 +8,7 @@ function Footer() {
 
     <div>
  
-       <FaBasketballBall className='inline pr-2 text-5xl'/>
+       <FaBasketballBall className='inline pr-2 text-6xl'/>
         <p>Copyright &copy; {footerYear} All rights reserved</p>
 
 

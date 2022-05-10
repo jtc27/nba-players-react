@@ -19,22 +19,7 @@ export const NbaProvider = ({children}) => {
   const [state, dispatch] = useReducer(nbaReducer, initialState)
   //dispatch function, dispatches action to nbaReducer
 
-  const getPlayers = async() => {
-    const response = await fetch(`${NbaApiUrl}`) // Make a request
-  
-    if(response.status ===404) { 
-      window.location='/notfound'
-    } else {
-  
-      const data = await response.json()
-  
-      dispatch({
-        type: 'GET_PLAYERS',
-        payload: data.data
-      })
-    }
-  }
-
+  //Enter a name and returns a list of players
   const searchPlayers = async(text) => {
  
     // ${NbaApiUrl}?search=${params}
@@ -121,7 +106,6 @@ export const NbaProvider = ({children}) => {
     player: state.player,
     player_team: state.player_team,
     player_stats: state.player_stats,
-    getPlayers,
     getPlayerProfile,
     getPlayerProfileTeam,
     getPlayerProfileStats,

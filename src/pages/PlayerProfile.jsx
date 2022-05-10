@@ -82,7 +82,7 @@ function PlayerProfile() {
 
  
   return (
-    <div className='shadow-lg mb-4'>
+    <>
     <div className='w-full mx-auto lg:w-8/12'>
     <div className='mb-4'>
           <Link to='/' className='btn btn-ghost'>
@@ -328,7 +328,7 @@ function PlayerProfile() {
    
  
     
-    </div>
+    </>
   )
 }
 
