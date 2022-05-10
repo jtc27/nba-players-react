@@ -1,5 +1,6 @@
 import { useState, useContext } from "react"
 import NbaContext from "../../context/nba/NbaContext"
+import Instructions from "../layout/Instructions"
 // import AlertContext from "../../context/alert/AlertContext"
 
 function PlayerSearchBar() {
@@ -53,13 +54,11 @@ function PlayerSearchBar() {
        {players.length >0 && (<button
             onClick={clearPlayers}
             className='btn btn-outline btn-lg'>
-          Clear list
+          Clear the list
          </button>)} 
          {/* clears a list of players */}
 
-         {players.length === 0 && 
-         (<div><h3>
-           Enter a player's name to search</h3></div>)} 
+         {players.length === 0 && (<Instructions/>)} 
 
       </div>
     </div>
