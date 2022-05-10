@@ -69,8 +69,9 @@ export const NbaProvider = ({children}) => {
     }
   }
 
+  // Gets individual player's current team name
   const getPlayerProfileTeam = async(id) => {
-    const response = await fetch(`https://www.balldontlie.io/api/v1/players/${id}`) // Make a request
+    const response = await fetch(`https://www.balldontlie.io/api/v1/players/${id}`)
   
     if(response.status ===404) { 
       window.location='/notfound'
@@ -85,6 +86,7 @@ export const NbaProvider = ({children}) => {
     }
   }
 
+  // Gets individual player's stats for the current NBA season
   const getPlayerProfileStats = async(id) => {
     const response = await fetch(`https://www.balldontlie.io/api/v1/season_averages?player_ids[]=${id}`) 
   
@@ -97,20 +99,22 @@ export const NbaProvider = ({children}) => {
       if (data.data[0] === undefined) {
         dispatch({
           type: 'GET_PLAYER_PROFILE_STATS',
-          payload: 'N/A'  //Some players have empty stats
+          payload: 'N/A'  //Some players in the API have empty stats, so return N/A in this case
         })
       } else {
         dispatch({
           type: 'GET_PLAYER_PROFILE_STATS',
-          payload: data.data[0]   //The first element of the array has stats
+          payload: data.data[0]   //The first element of the array has the stats
         })
       }
     }
   }
 
-  const clearPlayers = async(text) => {
-    
-  }
+
+  const clearPlayers = () => 
+    dispatch({
+      type: 'CLEAR_PLAYERS',
+    })
 
   return <NbaContext.Provider value={{
     players: state.players,
@@ -122,6 +126,7 @@ export const NbaProvider = ({children}) => {
     getPlayerProfileTeam,
     getPlayerProfileStats,
     searchPlayers,
+    clearPlayers,
   }}>
   {children}
   </NbaContext.Provider>

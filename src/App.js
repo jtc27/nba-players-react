@@ -5,6 +5,7 @@ import Navbar from "./components/layout/Navbar";
 import Home from './pages/Home';
 import About from './pages/About';
 import PlayerProfile from './pages/PlayerProfile';
+import Footer from './components/layout/Footer';
 
 import {NbaProvider} from './context/nba/NbaContext'
 
@@ -16,13 +17,17 @@ function App() {
       <div className='flex flex-col justify-between h-screen bg-white text-black'>
       <Navbar/>
 
-      <main className='flex flex-col mx-auto px-3 pb-3 bg-white-600'>
+    
+      <div className='flex flex-col mx-auto px-3 pb-3 bg-white-600 '>
       <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
             <Route path='/player/:id' element={<PlayerProfile />} />
       </Routes>
-      </main>
+      </div>
+ 
+
+      <Footer />
       </div>
 
       </Router>

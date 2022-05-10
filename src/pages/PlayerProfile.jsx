@@ -82,7 +82,7 @@ function PlayerProfile() {
 
  
   return (
-    <>
+    <div className='shadow-lg mb-4'>
     <div className='w-full mx-auto lg:w-8/12'>
     <div className='mb-4'>
           <Link to='/' className='btn btn-ghost'>
@@ -90,7 +90,7 @@ function PlayerProfile() {
           </Link>
         </div>
 
-        <div className='grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-3 mb-5 md:gap-8'>
+        <div className='grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-3 mb-5 md:gap-8 '>
           <div className='custom-card-image'>
             <div className='rounded-lg shadow-xl image-full mt-5'>
               
@@ -328,7 +328,7 @@ function PlayerProfile() {
    
  
     
-    </>
+    </div>
   )
 }
 

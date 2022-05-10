@@ -5,7 +5,7 @@ import NbaContext from "../../context/nba/NbaContext"
 function PlayerSearchBar() {
   const [text, setText] = useState('')
 
-  const {players, searchPlayers} = useContext(NbaContext)
+  const {players, searchPlayers, clearPlayers} = useContext(NbaContext)
   // pulls the values from Context Provider that we want to use in this component
 
   // const {setAlert} = useContext(AlertContext)
@@ -33,7 +33,7 @@ function PlayerSearchBar() {
           <div className="form-control">
             <div className="relative">
               <input type="text" 
-              className="w-full pr-00 bg-zinc-100 input input-lg font-bold text-black" 
+              className="w-full pr-40 gb-white-200 input input-lg text-black" 
               placeholder='search'
               value={text}
               onChange={handleChange}
@@ -50,11 +50,12 @@ function PlayerSearchBar() {
       </div>
       <div>
 
-      {/* {players.length >0 && (<button
+       {players.length >0 && (<button
             onClick={clearPlayers}
-            className='btn btn-ghost btn-lg'>
-          Clear 
-         </button>)} shows clear button only if users in the state */}
+            className='btn btn-outline btn-lg'>
+          Clear list
+         </button>)} 
+         {/* clears a list of players */}
 
       </div>
     </div>
