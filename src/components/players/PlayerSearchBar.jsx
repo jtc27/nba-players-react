@@ -57,6 +57,10 @@ function PlayerSearchBar() {
          </button>)} 
          {/* clears a list of players */}
 
+         {players.length === 0 && 
+         (<div><h3>
+           Enter a player's name to search</h3></div>)} 
+
       </div>
     </div>
   )

@@ -2,9 +2,6 @@ import {useEffect, useContext} from 'react'
 import NbaContext from '../context/nba/NbaContext'
 
 import defaultpic from '../images/missing-pic.png'
-import atl from '../images/logos/atl.png'
-import lal from '../images/logos/lal.png'
-
 
 import {useParams, Link} from 'react-router-dom'
 

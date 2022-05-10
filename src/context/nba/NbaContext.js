@@ -3,8 +3,6 @@ import nbaReducer from "./NbaReducer";
 
 const NbaContext = createContext()
 
-const NbaApiUrl = 'https://www.balldontlie.io/api/v1/players'
-
 //Provider function is exported
 //Wraps around ALL of the functions, the fetch, the return
 export const NbaProvider = ({children}) => {
