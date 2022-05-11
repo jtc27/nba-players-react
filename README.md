@@ -16,11 +16,11 @@ In the picture above you can see Lebron James' personal statistics for the 2021-
 
 PER (Player Efficiency Rating) is an NBA formula.  This formula takes all of the player's individual statistics and outputs a single value which marks how valuable he is.  It is a complex formula and I used a simplified version of it from here: [https://www.sportsbettingdime.com/guides/how-to/calculate-per/](https://www.sportsbettingdime.com/guides/how-to/calculate-per/).  In basketball PER is sometimes used as an argument for a player's overall value but its usefulness remains debatable. 
 
-There are limitations to the balldontlie API.  Data for players previous to the current generation seems to be nearly non-existent.  Tim Duncan (played 1997-2016) is one of the all-time great players who retired in 2016.  Yet he has no data on this API.
+There are limitations to the balldontlie API.  Data for players previous to the current generation seems to be nearly non-existent.  Tim Duncan (played 1997-2016) is one of the all-time great players who retired in 2016.  Yet he has no data on this API.  Neither are Michael Jordan (played 1984-2003) or Shaquille O'Neal (played 1992-2011), both iconic players who have no data on this API.  So while it is advertised as hosting data for players 1979-current, the data is relatively scant.
 
 <img src="https://raw.githubusercontent.com/jtc27/nba-players-react/main/src/images/github-preview/c.png" height="350">
 
-Overall, for a free NBA API this one is quite decent and usable.  Perhaps next time I can find a more complete data source and update my app.
+Overall, for a free NBA API this one is quite decent and usable.  Perhaps in the future I can find a more complete data source and update my app.  I did enjoy using it and building this site, as there seems to be a scarcity of good APIs out there for NBA related data.
 
 The app is deployed at [https://nba-players-react.vercel.app](https://nba-players-react.vercel.app)
 
@@ -33,6 +33,8 @@ The app is deployed at [https://nba-players-react.vercel.app](https://nba-player
 | ------------- | ------------- |
 |  [Tailwind](https://tailwindcss.com/)  | Tailwind CSS |
 |  [daisyUI](https://daisyui.com/)  | daisyUI  |
+|  [https://www.balldontlie.io/](https://www.balldontlie.io/)  | NBA player data  |
+|  [https://github.com/iNaesu/nba-headshot-api](https://github.com/iNaesu/nba-headshot-api)  | Player photos  |
  
 
 
