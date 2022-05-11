@@ -2,13 +2,13 @@
 
 This is a search app for NBA players.  You can enter a player's name and search for their statistics.  In the picture below a search for "Curry" gives the following results.
 
-<img src="https://raw.githubusercontent.com/jtc27/nba-players-react/main/src/images/github-preview/a.png" height="350">
+<img src="https://raw.githubusercontent.com/jtc27/nba-players-react/main/src/images/github-preview/a.png" height="400">
 
 For player profile images, this API was used: [https://github.com/iNaesu/nba-headshot-api](https://github.com/iNaesu/nba-headshot-api).  You may notice in the picture above only Stephen Curry and brother Seth Curry have photos available.  The other older "Currys" do not have photos available on this API.  When a player's picture is unavailable a generic default image is shown.
 
 The headshot API was last updated for the 2017-2018 season, so some player images will not be current.  For example Lebron James is pictured below in a Cleveland Cavaliers uniform (2017), but as of now (2022) he is a member of the LA Lakers:
 
-<img src="https://raw.githubusercontent.com/jtc27/nba-players-react/main/src/images/github-preview/b.png" height="350">
+<img src="https://raw.githubusercontent.com/jtc27/nba-players-react/main/src/images/github-preview/b.png" height="400">
 
 Besides the photos, all player information is taken from the balldontlie API [https://www.balldontlie.io/](https://www.balldontlie.io/).  It contains player and team statistics from 1979 to the current season.
 
