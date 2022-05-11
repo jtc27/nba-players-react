@@ -1,6 +1,12 @@
 # NBA Player Search React
 
-This is a search app for NBA players.  You can enter a player's name and search for their statistics.  In the picture below a search for "Curry" gives the following results.
+## Deployed
+
+The app is deployed at [https://nba-players-react.vercel.app](https://nba-players-react.vercel.app)
+
+## About this Project
+
+This is a search app for NBA players.  You can enter a player's name and look up their statistics.  In the picture below a search for "Curry" gives the following results.
 
 <img src="https://raw.githubusercontent.com/jtc27/nba-players-react/main/src/images/github-preview/a.png" height="400">
 
@@ -21,9 +27,6 @@ There are limitations to the balldontlie API.  Data for players previous to the 
 <img src="https://raw.githubusercontent.com/jtc27/nba-players-react/main/src/images/github-preview/c.png" height="350">
 
 Overall, for a free NBA API this one is quite decent and usable.  Perhaps in the future I can find a more complete data source and update my app.  I did enjoy using it and building this site, as there seems to be a scarcity of good APIs out there for NBA related data.
-
-The app is deployed at [https://nba-players-react.vercel.app](https://nba-players-react.vercel.app)
-
 
 ## Stack
 
