@@ -12,9 +12,11 @@ The headshot API was last updated for the 2017-2018 season, so some player image
 
 Besides the photos, all player information is taken from the balldontlie API [https://www.balldontlie.io/](https://www.balldontlie.io/).  It contains player and team statistics from 1979 to the current season.
 
-In the picture above you can see Lebron James' personal statistics for the 2021-22 NBA season.  All of the player info was taken from the API, except PER.  PER (Player Efficiency Rating) is an NBA formula.  The formula takes all of the player's individual statistics and outputs a single value which marks how valuable that is.  It is a complex formula and I used a simplified version of it from here: [https://www.sportsbettingdime.com/guides/how-to/calculate-per/](https://www.sportsbettingdime.com/guides/how-to/calculate-per/).  In basketball PER is sometimes used as an argument for a player's overall value but its usefulness remains debatable. 
+In the picture above you can see Lebron James' personal statistics for the 2021-22 NBA season.  All of the player info was taken from the API, except PER.  (PER is shown in the orange badge; Lebron's is displayed as 25.35 PER)  
 
-There are limitations to the balldontlie API.  Data for players previous to this current generation is nearly non-existent.  Tim Duncan (played 1997-2016) is one of the all-time great players who retired in 2016.  Yet he has no data on this API.
+PER (Player Efficiency Rating) is an NBA formula.  This formula takes all of the player's individual statistics and outputs a single value which marks how valuable he is.  It is a complex formula and I used a simplified version of it from here: [https://www.sportsbettingdime.com/guides/how-to/calculate-per/](https://www.sportsbettingdime.com/guides/how-to/calculate-per/).  In basketball PER is sometimes used as an argument for a player's overall value but its usefulness remains debatable. 
+
+There are limitations to the balldontlie API.  Data for players previous to the current generation seems to be nearly non-existent.  Tim Duncan (played 1997-2016) is one of the all-time great players who retired in 2016.  Yet he has no data on this API.
 
 <img src="https://raw.githubusercontent.com/jtc27/nba-players-react/main/src/images/github-preview/c.png" height="350">
 
