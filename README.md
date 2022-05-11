@@ -4,21 +4,24 @@ This is a search app for NBA players.  You can enter a player name and search fo
 
 <img src="https://raw.githubusercontent.com/jtc27/nba-players-react/main/src/images/github-preview/a.png" height="350">
 
-For player profile images, this API was used: [https://github.com/iNaesu/nba-headshot-api](https://github.com/iNaesu/nba-headshot-api).  In the above picture only Stephen Curry and brother Seth Curry have photos available.  As you can see many older player images are not available on this API.  A generic default picture is shown if the player's photo is unavailable in the headshot API.
+For player profile images, this API was used: [https://github.com/iNaesu/nba-headshot-api](https://github.com/iNaesu/nba-headshot-api).  In the above picture only Stephen Curry and brother Seth Curry have photos available.  Many older player images are not available on this API.  A generic default picture is shown if the player's photo is unavailable in the headshot API.
 
-The headshot API was last updated for the 2017-2018 season, so some player images will not be current.  For example Lebron James is pictured in a Cleveland Cavaliers uniform (2017), but as of now (2022) he is a member of the LA Lakers. 
+The headshot API was last updated for the 2017-2018 season, so some player images will not be current.  For example Lebron James is pictured in a Cleveland Cavaliers uniform (2017), but as of now (2022) he is a member of the LA Lakers:
 
 <img src="https://raw.githubusercontent.com/jtc27/nba-players-react/main/src/images/github-preview/b.png" height="350">
 
-Player stats are all taken from the balldontlie API.
+Besides the photos, all player information is taken from the balldontlie API [https://www.balldontlie.io/](https://www.balldontlie.io/).  It contains player and team statistics from 1979 to the current season.
 
-Deployed at [https://nba-players-react.vercel.app](https://nba-players-react.vercel.app)
+In the picture above you can see Lebron James' personal statistics for the 2021-22 NBA season.  All of the player info was taken from the API, except PER.  PER (Player Efficiency Rating) is an NBA formula.  The formula takes all of the player's individual statistics and outputs a single value which marks how valuable that is.  It is a complex formula and I used a simplified version of it from here: [https://www.sportsbettingdime.com/guides/how-to/calculate-per/](https://www.sportsbettingdime.com/guides/how-to/calculate-per/).  In basketball PER is sometimes used as an argument for a player's overall value but its usefulness remains debatable. 
 
+There are limitations to the balldontlie API.  Data for players previous to this current generation is nearly non-existent.  Tim Duncan (played 1997-2016) is one of the all-time great players who retired in 2016.  Yet he has no data on this API.
 
-<img src="https://raw.githubusercontent.com/jtc27/housing-marketplace-react/main/src/housing-app.png" height="250">
+<img src="https://raw.githubusercontent.com/jtc27/nba-players-react/main/src/images/github-preview/c.png" height="350">
 
-## Features
-* Search for the player and get stats
+Overall, for a free NBA API this one is quite decent and usable.  Perhaps next time I can find a more complete data source and update my app.
+
+The app is deployed at [https://nba-players-react.vercel.app](https://nba-players-react.vercel.app)
+
 
 ## Stack
 
